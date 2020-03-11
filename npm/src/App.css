@@ -1,0 +1,186 @@
+.App {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #563d7c;
+}
+.button {
+display: inline-block;
+border-radius: 4px;
+background-color: #f4511e;
+border: none;
+color: #FFFFFF;
+text-align: center;
+font-size: 28px;
+padding: 20px;
+width: 200px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.button:hover span {
+padding-right: 25px;
+}
+
+.button:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  background-color: #563d7c;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+  SIDEBAR STYLE
+----------------------------------------------------- */
+.sidebar {
+min-width: 250px;
+max-width: 250px;
+background: #563d7c;
+color: #563d7c;
+margin-left: -250px;
+transition: all 0.5s;
+
+}
+
+.sidebar.is-open {
+margin-left: 0;
+transition: .5s;
+}
+
+
+.sidebar-header {
+background: #563d7c;
+}
+.ml-auto{
+font-size: small ;
+}
+.sidebar-header h3{
+color: #fff;
+padding: 1em;
+padding-top: 6em;
+}
+
+.sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+.menu-open {
+background: #563d7c;
+}
+
+.nav-item:hover {
+  color: #563d7c;
+  background: #563d7c;
+}
+
+.items-menu {
+color: #fff;
+background: #563d7c;
+}
+
+li a.dropdown-toggle::after {
+  display: inline-flex;
+  position: relative;
+  left: 60%;
+  top: 10%
+}
+.form-center {
+position: absolute !important;
+left: 25%;
+right: 25%;
+}
+
+.sidebar-header > span {
+  position: relative;
+  float: right;
+  margin: .5em;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+.side-menu {
+height: calc(100vh - 130px);
+overflow-y: scroll;
+font-size: large;
+background-color: #563d7c;
+}
+
+.side-menu::-webkit-scrollbar {
+width: 10px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+background: #563d7c; 
+border-radius: 3px;
+}
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+background: #563d7c; 
+}
+
+/* ---------------------------------------------------
+  CONTENT STYLE
+----------------------------------------------------- */
+.content {
+padding: 20px;
+margin-left: 0;
+height: 100vh;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    overflow:  hidden;
+  }
+
+  .content.is-open {
+    margin-left: 100%;
+  }
+
+  .sidebar.is-open {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    transition: all 0.5s, height 0s;
+  }
+
+  .sidebar.is-open > .sidebar-header span{
+    display: unset;
+  }
+
+  li a.dropdown-toggle::after {
+      display: inline-block;
+      position: relative;
+      left: 68%;
+  }
+}
